@@ -1,0 +1,23 @@
+.deck-wrapper{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    padding: 5px;
+}
+.box-wrapper{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    padding: 5px;
+    outline: solid black 1px;
+}
+
+.deck-item{
+    padding: 20px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    outline: solid grey 1px;
+    
+    font-size: 16px;
+}
