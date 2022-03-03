@@ -5,110 +5,353 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoku World</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="deck-wrapper">
-        <div class="box-wrapper" style = "display: inline-grid;">
-            <div class="deck-item">1</div>
-            <div class="deck-item">2</div>
-            <div class="deck-item">3</div>
-            <div class="deck-item">4</div>
-            <div class="deck-item">5</div>
-            <div class="deck-item">6</div>
-            <div class="deck-item">7</div>
-            <div class="deck-item">8</div>
-            <div class="deck-item">9</div>
+        <div class="row initial-deck row-1">
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "1" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "2" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "3" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "5" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "6" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "7" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "8" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-last">
+                <input class = "input-box" type="text" maxlength="1" value = "9" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
         </div>
-        <div class="box-wrapper" style = "display: inline-grid;">
-            <div class="deck-item">1</div>
-            <div class="deck-item">2</div>
-            <div class="deck-item">3</div>
-            <div class="deck-item">4</div>
-            <div class="deck-item">5</div>
-            <div class="deck-item">6</div>
-            <div class="deck-item">7</div>
-            <div class="deck-item">8</div>
-            <div class="deck-item">9</div>
+        <div class="row initial-deck">
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "1" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "2" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "3" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "5" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "6" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "7" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "8" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-last">
+                <input class = "input-box" type="text" maxlength="1" value = "9" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
         </div>
-        <div class="box-wrapper" style = "display: inline-grid;">
-            <div class="deck-item">1</div>
-            <div class="deck-item">2</div>
-            <div class="deck-item">3</div>
-            <div class="deck-item">4</div>
-            <div class="deck-item">5</div>
-            <div class="deck-item">6</div>
-            <div class="deck-item">7</div>
-            <div class="deck-item">8</div>
-            <div class="deck-item">9</div>
+        <div class="row initial-deck row-3">
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "1" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "2" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "3" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "5" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "6" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "7" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "8" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-last">
+                <input class = "input-box" type="text" maxlength="1" value = "9" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
         </div>
-        <div class="box-wrapper" style = "display: inline-grid;">
-            <div class="deck-item">1</div>
-            <div class="deck-item">2</div>
-            <div class="deck-item">3</div>
-            <div class="deck-item">4</div>
-            <div class="deck-item">5</div>
-            <div class="deck-item">6</div>
-            <div class="deck-item">7</div>
-            <div class="deck-item">8</div>
-            <div class="deck-item">9</div>
+        <div class="row initial-deck">
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "1" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "2" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "3" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "5" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "6" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "7" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "8" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-last">
+                <input class = "input-box" type="text" maxlength="1" value = "9" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
         </div>
-        <div class="box-wrapper" style = "display: inline-grid;">
-            <div class="deck-item">1</div>
-            <div class="deck-item">2</div>
-            <div class="deck-item">3</div>
-            <div class="deck-item">4</div>
-            <div class="deck-item">5</div>
-            <div class="deck-item">6</div>
-            <div class="deck-item">7</div>
-            <div class="deck-item">8</div>
-            <div class="deck-item">9</div>
+        <div class="row initial-deck">
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "1" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "2" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "3" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "5" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "6" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "7" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "8" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-last">
+                <input class = "input-box" type="text" maxlength="1" value = "9" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
         </div>
-        <div class="box-wrapper" style = "display: inline-grid;">
-            <div class="deck-item">1</div>
-            <div class="deck-item">2</div>
-            <div class="deck-item">3</div>
-            <div class="deck-item">4</div>
-            <div class="deck-item">5</div>
-            <div class="deck-item">6</div>
-            <div class="deck-item">7</div>
-            <div class="deck-item">8</div>
-            <div class="deck-item">9</div>
+        <div class="row initial-deck row-3">
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "1" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "2" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "3" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "5" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "6" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "7" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "8" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-last">
+                <input class = "input-box" type="text" maxlength="1" value = "9" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
         </div>
-        <div class="box-wrapper" style = "display: inline-grid;">
-            <div class="deck-item">1</div>
-            <div class="deck-item">2</div>
-            <div class="deck-item">3</div>
-            <div class="deck-item">4</div>
-            <div class="deck-item">5</div>
-            <div class="deck-item">6</div>
-            <div class="deck-item">7</div>
-            <div class="deck-item">8</div>
-            <div class="deck-item">9</div>
+        <div class="row initial-deck">
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "1" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "2" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "3" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "5" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "6" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "7" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "8" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-last">
+                <input class = "input-box" type="text" maxlength="1" value = "9" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
         </div>
-        <div class="box-wrapper" style = "display: inline-grid;">
-            <div class="deck-item">1</div>
-            <div class="deck-item">2</div>
-            <div class="deck-item">3</div>
-            <div class="deck-item">4</div>
-            <div class="deck-item">5</div>
-            <div class="deck-item">6</div>
-            <div class="deck-item">7</div>
-            <div class="deck-item">8</div>
-            <div class="deck-item">9</div>
+        <div class="row initial-deck">
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "1" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "2" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "3" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "5" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "6" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "7" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "8" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-last">
+                <input class = "input-box" type="text" maxlength="1" value = "9" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
         </div>
-        <div class="box-wrapper" style = "display: inline-grid;">
-            <div class="deck-item">1</div>
-            <div class="deck-item">2</div>
-            <div class="deck-item">3</div>
-            <div class="deck-item">4</div>
-            <div class="deck-item">5</div>
-            <div class="deck-item">6</div>
-            <div class="deck-item">7</div>
-            <div class="deck-item">8</div>
-            <div class="deck-item">9</div>
+        <div class="row initial-deck row-3">
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "1" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "2" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "3" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "5" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "6" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-border">
+                <input class = "input-box" type="text" maxlength="1" value = "7" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col">
+                <input class = "input-box" type="text" maxlength="1" value = "8" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
+            <div class="col col-last">
+                <input class = "input-box" type="text" maxlength="1" value = "9" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');" />
+            </div>
         </div>
     </div>
 </body>
