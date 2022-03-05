@@ -1,0 +1,34 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.header{
+    /* position: relative; */
+    bottom: 50% ;  
+    font-family: 'Courier New', Courier, monospace;
+    width: 24em;
+    margin-top: 15%;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 3.5rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    /* transform: translateY(-50%);    */
+}
+
+.typewriter-animation{
+    animation: typewriter 3s steps(27) 1s 1 normal both,
+               blinkTextCursor 750ms steps(27) infinite normal;
+  }
+  @keyframes typewriter{
+    from{width: 0;}
+    to{width: 16.1em;}
+  }
+  @keyframes blinkTextCursor{
+    from{border-right-color: rgba(0, 0, 0, 0.75);}
+    to{border-right-color: transparent;}
+  }

@@ -2,11 +2,16 @@ body {
     background-color: #e6c984;
     
   }
-
+h2{
+    margin-top: 12.5vh;
+    font-size: 2.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
 .deck-wrapper{
     
     /* width: 50%; */
-    height: 100vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,8 +53,29 @@ body {
     border: none;
     background-color: #ce9560;
     font-size: 1.5rem;
-    font-family: Arial Rounded MT Bold;
+    font-family: 'Courier New', Courier, monospace;
     color :#e0daa9;
 }
 
 :focus { outline: none; }
+
+.page-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(52, 51, 68);
+    color: white;
+    text-align: center;;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+
+.play-btn{
+    font-size: 1.75rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.fa-lg{
+    color:white;
+}
