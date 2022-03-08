@@ -8,6 +8,7 @@ var gameRouter = require('./routes/sudoku');
 var testRouter = require('./routes/test');
 
 
+
 app.listen(3000);
 
 
@@ -23,4 +24,7 @@ app.use(testRouter);
 
 app.use(express.static(__dirname + '/public'));
 
+const randomArray = (length, max) => 
+  Array(length).fill().map(() => Math.round(Math.random() * max))
+  console.log(randomArray(60,81).sort())
 module.exports = app;
