@@ -7,7 +7,6 @@ body{
 
 
 .header{
-    /* position: relative; */
     bottom: 50% ;  
     font-family: 'Courier New', Courier, monospace;
     width: 24em;
@@ -17,9 +16,7 @@ body{
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    /* transform: translateY(-50%);    */
 }
-
 .typewriter-animation{
     animation: typewriter 3s steps(27) 1s 1 normal both,
                blinkTextCursor 750ms steps(27) infinite normal;

@@ -10,7 +10,6 @@ h2{
 }
 .deck-wrapper{
     
-    /* width: 50%; */
     height: 60vh;
     display: flex;
     flex-direction: column;

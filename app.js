@@ -5,6 +5,7 @@ var path = require('path');
 
 var indexRouter = require('./routes/index');
 var gameRouter = require('./routes/sudoku');
+var testRouter = require('./routes/test');
 
 
 app.listen(3000);
@@ -16,7 +17,8 @@ app.set('view engine', 'ejs');
 
 app.use('/', indexRouter);
 
-app.use(gameRouter)
+app.use(gameRouter);
+app.use(testRouter);
 
 
 app.use(express.static(__dirname + '/public'));
