@@ -4,28 +4,28 @@ body {
   }
 h2{
     margin-top: 12.5vh;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
 .deck-wrapper{
     
-    height: 60vh;
+    margin-top: 5vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    width: fit-content;
+    height: fit-content;
+    border: solid 4px rgb(102, 70, 49);
+    border-radius: 1vmin;
+
 }
 
 .col-border{
     box-shadow: -3px 0px 0px 0px   rgb(102, 70, 49);
 }
-.col-last{
-    box-shadow: 3px 0px 0px 0px   rgb(102, 70, 49);
-}
-.row-1{
-    border-top:solid 3px rgb(102, 70, 49);
-}
+
 .row-3{
     border-bottom: solid 3px rgb(102, 70, 49);
 }
@@ -39,10 +39,9 @@ h2{
     height: 50px;
     width: 50px;
     border: solid rgb(146, 112, 68) 1px;
-    
-    /* border-collapse: collapse; */
-
+    gap : 20px;
     font-size: 16px;
+    margin: 0;
 }
 
 .input-box{
@@ -54,6 +53,7 @@ h2{
     font-size: 1.5rem;
     font-family: 'Courier New', Courier, monospace;
     color :#e0daa9;
+    caret-color: transparent;
 }
 
 :focus { outline: none; }

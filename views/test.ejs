@@ -11,6 +11,7 @@
     <link rel="icon" href="/icons/brain.ico">
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <h2>ultimate sudoku</h2>
         <div class="container deck-wrapper">     
             <% for( let row = 0; row < 9; row++ ) { %>
@@ -29,12 +30,16 @@
                     <% } else {%>
                             <div class="col">
                     <% } %>
-                        <input class = "input-box" type="text" maxlength="1" value = " <%= Math.floor((Math.random() * 9) + 1) %>  "       
+                        <input class = "input-box" type="text" maxlength="2" value = "<%= Math.floor((Math.random() * 9) + 1) %>"       
                         oninput="this.value=this.value.replace(/[^0-9]/g,'');" />  
                     </div> <!-- col-->
                 <% } %>
                 </div>  <!-- row div-->
             <% } %>
         </div>   <!-- wrapper div -->
-
+        <script>$("input").on('input', function(){
+            var value = $(this).val();
+            $(this).val(value[value.length-1]);
+           })</script>
+        
 </body>
