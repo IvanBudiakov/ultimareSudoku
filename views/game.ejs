@@ -24,15 +24,15 @@
                 <% } %>  
                 <% for( let col = 0; col < 9; col++ ) { %>
                     <% if(col==8){ %>
-                       <div class="col col-last id= "<% (row+1)*(col+1) %>">
+                       <div class="col col-last">
                     <% } else if (col == 3 || col == 6) { %>
-                            <div class="col col-border" id= "<% (row+1)*(col+1) %>">
+                            <div class="col col-border">
                     <% } else {%>
-                            <div class="col" id= "<% (row+1)*(col+1) %>">
+                            <div class="col">
                     <% } %>
                         <input class = "input-box" maxlength="2" type="text" oninput="this.value=this.value.replace(/[^1-9]/g,'')" value = 
                         <% if (!sudoku.blank.includes((row+1)*(col+1))) { %>
-                            "<%= sudoku.board[row][col] %>" disabled style = "background-color: #bd8958;"
+                            "<%= sudoku.board[row][col] %>" id = "cell-<% ((row+1)*(col+1)) %>"  disabled style = "background-color: #bd8958;"
                         <% } else {%>
                             "" 
                             onfocus="this.style.background='#eebb85'; this.style.color = '#666'" 
