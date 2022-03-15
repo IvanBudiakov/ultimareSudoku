@@ -1,16 +1,7 @@
-
-  
-
   /*
       next part of the code generates a sudoku solver which is used to generate sudoku boards
       and to visualize the backtracking algoritm
   */
-
-
-  
-  
-  
-  
   function findEmpty(board){
       var pos = []
   
@@ -77,15 +68,16 @@
 ]
   
   var numSolutions = 0;
-  
 
   module.exports.solve = function backTrackSolve(board)
   {
+
       let find = findEmpty(board);
       if (find[0] == -1){
-          numSolutions++
-          return true;
+          addSolution()
+          return false;
       }
+      
       let row = find[0]
       let col = find[1]
   
@@ -96,16 +88,9 @@
           if (isValid(board, { row,col }, i))
           {
               board[row][col] = i;
-              if (backTrackSolve(board)){
-                    // if(findEmpty(board)[0]==-1 && numSolutions != 0){
-                    //     board[row][col] = 0
-                    //     if(backTrackSolve(board))
-                    //         numSolutions++
-                    //     board[row][col] = i
-                    // }
+              if (backTrackSolve(board))
                     
-                    return true;
-                }
+                return true;
   
             }
               board[row][col] = 0;
@@ -114,8 +99,11 @@
       return false;
   
   }
-  
-  module.exports.solutions = numSolutions
+
+  numSolutions = 0
+  function addSolution(){numSolutions+=1}
+  module.exports.getNumSolutions = function getNumSolutions(){return numSolutions}
+
 
 //   const deck = backTrackSolve(sudoku)
   

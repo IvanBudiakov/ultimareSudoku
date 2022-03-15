@@ -105,26 +105,34 @@ function transformNumbers(board){
     return board
   }
 
-  var removedCells = 0 
+  
 
-function hideCells(deck){
-    let x = Math.floor(Math.random()*9)
-    let y = Math.floor(Math.random()*9)
-    
-    if (removedCells == 25)
-        return deck
+// function hideCells(newDeck){
+//     let x = Math.floor(Math.random()*9)
+//     let y = Math.floor(Math.random()*9)
+//     var removedCells = 0 
 
-    if(deck[x][y] == 0)
-        return hideCells(deck)
-    
-    var removedValue = deck[x][y]
-    deck[x][y] = 0
-    if(!solver.solve(deck) || Math.random() > .5)
-        deck[x][y] = removedValue
-    else
-        removedCells += 1
-    
-}
+//     while(removedCells < 24){
+//         while(newDeck[x][y] == 0){
+//             x = Math.floor(Math.random()*9)
+//             y = Math.floor(Math.random()*9)
+//         }
+//         let removedValue = newDeck[x][y]
+//         newDeck[x][y] = 0
+//         console.log(x,y)
+//         console.log(removedValue)
+        
+//         solver.solve(newDeck)
+//         console.log(solver.getNumSolutions())
+//         if(solver.getNumSolutions() == 0 || solver.getNumSolutions() > 1)
+//             newDeck[x][y] = removedValue
+//         else
+//             removedCells += 1
+         
+//     }
+//     return newDeck
+// }
+
   
   function generateUniqueDeck(){  
     var initialBoard =   [
@@ -143,16 +151,15 @@ function hideCells(deck){
      
     let myBoard = transformNumbers(initialBoard)
     for (let index = 0; index < 3; index++) {
-        myBoard = 
-        // hideCells(
-            shuffle3x3cols(shuffle3x3rows(shuffleCols(shuffleRows(initialBoard, (1+index*3)),(1+index*3))))
-            // )
+        myBoard = shuffle3x3cols(shuffle3x3rows(shuffleCols(shuffleRows(initialBoard, (1+index*3)),(1+index*3))))       
     }
+    myBoard = hideCells(myBoard)
     return myBoard
   }
   
 var deck = generateUniqueDeck()
 
+// console.table(deck)
 
 
 
