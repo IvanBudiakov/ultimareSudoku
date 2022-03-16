@@ -13,6 +13,7 @@
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <h2>ultimate sudoku</h2>
+        
         <div class="container deck-wrapper">     
             <% for( let row = 0; row < 9; row++ ) { %>
                 <% if (row == 0) { %>
@@ -31,14 +32,14 @@
                             <div class="col">
                     <% } %>
                         <input class = "input-box" maxlength="2" type="text" oninput="this.value=this.value.replace(/[^1-9]/g,'')" value = 
-                        <% if (!sudoku.blank.includes((row+1)*(col+1))) { %>
+                        <% if(sudoku.board[row][col]!=0) { %>
                             "<%= sudoku.board[row][col] %>" id = "cell-<% ((row+1)*(col+1)) %>"  disabled style = "background-color: #bd8958;"
                         <% } else {%>
                             "" 
                             onfocus="this.style.background='#eebb85'; this.style.color = '#666'" 
                             onfocusout = "this.style.background='#ce9560'; this.style.color='#e0daa9'"
                         <% } %>
-                        <% if (sudoku.blank.includes((row+1)*(col+1))) { %>
+                        <% if(sudoku.board[row][col]==0) { %>
                         <% } %>
                             />  <!-- end input -->
                     </div> <!-- col-->
@@ -46,8 +47,11 @@
                 </div>  <!-- row div-->
             <% } %>
         </div>   <!-- wrapper div -->
-
-
+        <div class="controls">
+            <button type="button" class="btn btn-success control">Submit</button>
+            <button type="button" class="btn btn-danger control " >Reset</button>
+            <button type="button" class="btn btn-info control">New Deck</button>
+        </div>
 
 
         <!-- footer -->
@@ -86,7 +90,11 @@
             </div>
           </footer>
         <script src="https://kit.fontawesome.com/6fbacc9e6c.js" crossorigin="anonymous"></script>
-        <script>$("input").on('input', function(){
+        <script>
+          window.onbeforeunload = function () {
+            return 'All the data is going to be lost, are you sure?';
+          }
+        $("input").on('input', function(){
             var value = $(this).val();
             $(this).val(value[value.length-1]);
            })</script>

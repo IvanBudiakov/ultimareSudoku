@@ -2,6 +2,7 @@
       next part of the code generates a sudoku solver which is used to generate sudoku boards
       and to visualize the backtracking algoritm
   */
+
   function findEmpty(board){
       var pos = []
   
@@ -66,17 +67,12 @@
     [0,0,2, 6,0,7, 9,0,0],
     [0,0,0, 0,0,1, 4,0,8]
 ]
-  
-  var numSolutions = 0;
-
   module.exports.solve = function backTrackSolve(board)
   {
-
       let find = findEmpty(board);
-      if (find[0] == -1){
-          addSolution()
-          return false;
-      }
+      // console.table(board)
+      if (find[0] == -1)
+          return true;
       
       let row = find[0]
       let col = find[1]
@@ -84,26 +80,21 @@
   
       for (let i = 1; i < 10; i++)
       {
-  
           if (isValid(board, { row,col }, i))
           {
               board[row][col] = i;
               if (backTrackSolve(board))
                     
                 return true;
-  
+            
             }
               board[row][col] = 0;
       }
   
+      
       return false;
   
   }
-
-  numSolutions = 0
-  function addSolution(){numSolutions+=1}
-  module.exports.getNumSolutions = function getNumSolutions(){return numSolutions}
-
 
 //   const deck = backTrackSolve(sudoku)
   
