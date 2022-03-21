@@ -46,6 +46,7 @@ h2{
 
 .input-box{
     width:3rem;
+    transition: ease-in-out, width .25s ease-in-out;
     aspect-ratio: 1;
     text-align: center;
     border: none;
@@ -56,7 +57,13 @@ h2{
     caret-color: transparent;
 }
 
-:focus { outline: none; }
+:focus { 
+    outline: solid rgb(146, 112, 68) 2px;
+    background-color: #eebb85; 
+    color: #666;
+    width: 3.3rem;
+    z-index: 999;
+}
 
 .page-footer{
     position: fixed;
@@ -72,6 +79,8 @@ h2{
 
 .play-btn{
     font-size: 1.75rem;
+    width: 19rem;
+    height: 4rem;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -80,7 +89,7 @@ h2{
 }
 
 .controls{
-    margin-top: 1vh;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,8 +98,8 @@ h2{
 }
 
 .control{
-    margin-left : 1vmin;
-    margin-right : 1vmin;
+    margin:1rem  1rem 0 1rem;
+    width:7rem;
 }
 
 
