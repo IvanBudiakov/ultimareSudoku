@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var solver = require('../public/javascripts/solver')
+// var checker = require('../public/javascripts/checker')
 var creator = require('../public/javascripts/sudokuCreator')
  
 //  const myModule = require('../public/javascripts/sudokuSolver');
@@ -12,8 +13,9 @@ router.get('/game', function(req, res, next) {
 });
 
 console.time()
-var deck = creator
+const deck = creator
 console.timeEnd()
+
 
 // console.table(deck)
 

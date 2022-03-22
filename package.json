@@ -1,0 +1,39 @@
+{
+  "name": "ultimate-sudoku",
+  "version": "1.0.0",
+  "description": "web site for solving, vizualizing, generating and playing sudoku",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "keypress": "^0.2.1",
+    "mongoose": "^6.2.7"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanBudiakov/ultimateSudoku.git"
+  },
+  "keywords": [
+    "sudoku",
+    "solver",
+    "generator",
+    "api",
+    "vizualizer",
+    "backtracking",
+    "algorithm"
+  ],
+  "author": "Ivan Budiakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanBudiakov/ultimateSudoku/issues"
+  },
+  "homepage": "https://github.com/IvanBudiakov/ultimateSudoku#readme"
+}

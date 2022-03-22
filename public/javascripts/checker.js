@@ -19,78 +19,93 @@ function loadUserDeck() {
 function checker(value, id) {
     value %= 10
     let cellid = parseInt(id.slice(5))
-
     checkValid(loadUserDeck(), cellid, value)
-
 }
+
+
+/*
+    checkValid function checks if the current input is valid for the sudoku to be true
+    if it's not, highlights both input and the interferring cell's value red
+*/
 
 function checkValid(deck, cellid, num) {
 
     let cellRow = Math.floor((cellid - 1) / 9)
     let cellCol = cellid - 1 - cellRow * 9
+
+    //current position
     var pos = {
         row: cellRow,
         col: cellCol
     }
+
     var duplicate = 0
     var selected = document.getElementById('cell-'.concat(cellid))
 
-        for (var col = 0; col < 9; col++) {
-            let current = document.getElementById('cell-'.concat((pos.row * 9 + col + 1)))
+    for (var col = 0; col < 9; col++) {
+        let current = document.getElementById('cell-'.concat((pos.row * 9 + col + 1)))
 
-            // if(current.value != num && current.style.color == 'red'){continue}
-                if (current.value == num && pos.col != col) {
-                    console.log(pos.row, col)
-                    current.style.color = 'red'
-                    selected.style.color = 'red'
-                    selected.addEventListener("focusout", () => {
-                        selected.style.color = 'red'
-                        current.style.color = 'red'
-                    });
-                    duplicate += 1
-                }
-                else {
-                        console.log(`didn't find any matches`)
-                    selected.style.color = '#e0daa9'
-                    current.style.color = '#e0daa9'
-                    selected.addEventListener("focusout", () => {
-                        selected.style.color = '#e0daa9'
-                        current.style.color = '#e0daa9'
-                    });
-                }
-        }
-
-        for (var row = 0; row < 9; row++) {
-            let current = document.getElementById('cell-'.concat((row * 9 + pos.col + 1)))
-
-            if (current.value == num && pos.row != row) {
-                console.log(row, pos.col)
-                current.style.color = 'red'
-                selected.style.color = 'red'
-                selected.addEventListener("focusout", () => {
-                    selected.style.color = 'red'
-                    current.style.color = 'red'
-                });
-                duplicate += 1
-            }
-            else {
-                    selected.style.color = '#e0daa9'
-                    current.style.color = '#e0daa9'
-                    selected.addEventListener("focusout", () => {
-                        selected.style.color = '#e0daa9'
-                        current.style.color = '#e0daa9'
-                    });
-                
-            }
-        }
-        if(duplicate != 0){
+        //if cell's value within a row duplicates the input
+        if (current.value == num && pos.col != col) {
+            console.log(pos.row, col)
+            current.style.color = 'red'
             selected.style.color = 'red'
+            
+            //stay red when not in focus
             selected.addEventListener("focusout", () => {
                 selected.style.color = 'red'
+                current.style.color = 'red'
+            });
+            duplicate += 1
+        }
+        else {
+            console.log(`didn't find any matches`)
+            selected.style.color = '#e0daa9'
+            current.style.color = '#e0daa9'
+            selected.addEventListener("focusout", () => {
+                selected.style.color = '#e0daa9'
+                current.style.color = '#e0daa9'
             });
         }
     }
 
+    for (var row = 0; row < 9; row++) {
+        let current = document.getElementById('cell-'.concat((row * 9 + pos.col + 1)))
+
+        //if cell's value within a column duplicates the input
+        if (current.value == num && pos.row != row) {
+            console.log(row, pos.col)
+            current.style.color = 'red'
+            selected.style.color = 'red'
+            
+            //stay red when not in focus
+            selected.addEventListener("focusout", () => {
+                selected.style.color = 'red'
+                current.style.color = 'red'
+            });
+            duplicate += 1
+        }
+        else {
+            // reset color if not dupicate anymore 
+            selected.style.color = '#e0daa9'
+            current.style.color = '#e0daa9'
+            selected.addEventListener("focusout", () => {
+                selected.style.color = '#e0daa9'
+                current.style.color = '#e0daa9'
+            });
+
+        }
+    }
+    if (duplicate != 0) {
+        // highlight the input if column or row has any dupicates 
+        selected.style.color = 'red'
+        selected.addEventListener("focusout", () => {
+            selected.style.color = 'red'
+        });
+    }
+}
+
+// function checkRowCol(direction, selected, )
 
 
 function game(solvedDeck) {
